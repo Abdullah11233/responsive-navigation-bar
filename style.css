@@ -1,0 +1,146 @@
+ @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Satisfy', cursive;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.header {
+    padding: 0 48px;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e7f5ff;
+}
+
+ .header h1 {
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.navbar {
+    display: flex;
+    gap: 4.8rem;
+    list-style: none;
+}
+
+.navbar-link:link,
+.navbar-link:visited {
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #212529;
+    transition: all 0.3s;
+}
+
+.navbar-link:hover,
+.navbar-link:active {
+    color: #364fc7;
+}
+
+.navbar-btn {
+    display: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.mobile-icon {
+    font-size: 20px;
+    color: #212529;
+}
+
+.mobile-icon[name="close-outline"] {
+    display: none;
+}
+
+.section-hero,
+.section-services {
+    padding: 9.6rem 0;
+    background-color: #a5d8ff;
+    height: 60vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-services {
+    background: #f3f0ff;
+}
+
+.section-hero p,
+.section-services p {
+    font-size: 3.2rem;
+}
+
+@media (max-width: 62em) {
+    .navbar-btn {
+        display: block;
+        z-index: 999;
+        border: 3px solid #212529;
+        color: #212529;
+    }
+
+    .header {
+        position: relative;
+    }
+
+    .header .logo {
+        width: 40%;
+    }
+
+    .navbar {
+        /* display: none; */
+        width: 100%;
+        height: 100vh;
+        background: #e7f5ff;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        /* to get the tranisition  */
+        transform: translateX(100%);
+        transition: all 0.5s linear;
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    .navbar{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .active .navbar {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .active .navbar-btn .mobile-icon[name="close-outline"] {
+        display: block;
+    }
+
+    .active .navbar-btn .mobile-icon[name="menu-outline"] {
+        display: none;
+    }
+}
+
+@media (max-width: 35em) {
+    .header {
+        padding: 0 2.4rem;
+    }
+
+}
